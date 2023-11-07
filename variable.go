@@ -32,4 +32,8 @@ func main() {
 	)
 	fmt.Println(x4, y4, z4, d4, e4, f4, g4)
 
+	//Shortcut of above (Infers type)
+	msg6 := "Hello"
+	x5, msg5 := 1, "Hello"
+	fmt.Println(msg5, x5, msg6)
 }
