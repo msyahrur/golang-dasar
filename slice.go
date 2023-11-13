@@ -6,7 +6,6 @@ func main() {
 	/*
 		Slice adlah reference elemen array. slice bisa dibut, atau bisa juga dihasilakan dari manipulasi sebuah array ataupun slice lainnya.
 		karena mrp data reference,menjadikan perubahan data ditiap elemen slice akan berdampak pada slice lain yang memiliki alamat memori yang sma.
-
 	*/
 	// Inisialisasi Slice
 	//var slice = []string{"muh", "syahrur", "roma"}
