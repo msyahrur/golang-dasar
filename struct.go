@@ -235,6 +235,19 @@ func main() {
 
 		person2 := PersonAlias{"wick", 21}
 		fmt.Println(People(person2))
+
+	type People1 struct {
+		name string
+		age  int
+	}
+	type People2 = struct {
+		name string
+		age  int
+	}
+
+	type Number = int
+	var num Number = 12
+	fmt.Println(num)
 }
 
 /*
