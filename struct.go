@@ -210,10 +210,10 @@ func main() {
 	sAnonyVar1.grade = 21
 	sAnonyVar2.grade = 2
 	fmt.Printf("sAnonyVar1: %v, sAnonyVar2: %v", sAnonyVar1, sAnonyVar2)
-/*
-	A.24.15. Type Alias
-	Sebuah tipe data, seperti struct, bisa dibuatkan alias baru, caranya dengan type NamaAlias = TargetStruct. Contoh:
-*/
+	/*
+		A.24.15. Type Alias
+		Sebuah tipe data, seperti struct, bisa dibuatkan alias baru, caranya dengan type NamaAlias = TargetStruct. Contoh:
+	*/
 	type PersonAlias struct {
 		name string
 		age  int
@@ -226,15 +226,15 @@ func main() {
 	var p2 = PersonAlias{"wick", 21}
 	fmt.Println(p2)
 	/*
-	Pada kode di atas, sebuah alias bernama People dibuat untuk struct Person.
+		Pada kode di atas, sebuah alias bernama People dibuat untuk struct Person.
 
-	Casting dari objek (yang dicetak lewat struct tertentu) ke tipe yang merupakan alias dari struct pencetak, hasilnya selalu valid. Berlaku juga sebaliknya.
-*/
-		people2 := People{"wick", 21}
-		fmt.Println(PersonAlias(people2))
+		Casting dari objek (yang dicetak lewat struct tertentu) ke tipe yang merupakan alias dari struct pencetak, hasilnya selalu valid. Berlaku juga sebaliknya.
+	*/
+	people2 := People{"wick", 21}
+	fmt.Println(PersonAlias(people2))
 
-		person2 := PersonAlias{"wick", 21}
-		fmt.Println(People(person2))
+	person2 := PersonAlias{"wick", 21}
+	fmt.Println(People(person2))
 
 	type People1 struct {
 		name string
@@ -277,44 +277,14 @@ var p2 = struct { name string; age int } { "ethan", 23 }
 A.24.14. Tag property dalam struct
 Tag merupakan informasi opsional yang bisa ditambahkan pada masing-masing property struct.
 */
-type person struct {
-    name string `tag1`
-    age  int    `tag2`
+type personTagProperty struct {
+	name string `tag1`
+	age  int    `tag2`
 }
+
 //Tag biasa dimanfaatkan untuk keperluan encode/decode data json. Informasi tag juga bisa diakses lewat reflect. Nantinya akan ada pembahasan yang lebih detail mengenai pemanfaatan tag dalam struct, terutama ketika sudah masuk chapter JSON.
 
-/*
-A.24.15. Type Alias
-Sebuah tipe data, seperti struct, bisa dibuatkan alias baru, caranya dengan type NamaAlias = TargetStruct. Contoh:
-*/
-
-Pada kode di atas, sebuah alias bernama People dibuat untuk struct Person.
-
-Casting dari objek (yang dicetak lewat struct tertentu) ke tipe yang merupakan alias dari struct pencetak, hasilnya selalu valid. Berlaku juga sebaliknya.
-
-people := People{"wick", 21}
-fmt.Println(Person(people))
-
-person := Person{"wick", 21}
-fmt.Println(People(person))
-Pembuatan struct baru juga bisa dilakukan lewat teknik type alias. Silakan perhatikan kode berikut.
-
-type People1 struct {
-    name string
-    age  int
-}
-type People2 = struct {
-    name string
-    age  int
-}
-Struct People1 dideklarasikan. Struct alias People2 juga dideklarasikan, struct ini merupakan alias dari anonymous struct. Penggunaan teknik type alias untuk anonymous struct menghasilkan output yang ekuivalen dengan pendeklarasian struct.
-
-Perlu diketahui juga, dan di atas sudah sempat disinggung, bahwa teknik type alias ini tidak dirancang hanya untuk pembuatan alias pada tipe struct saja, semua jenis tipe data bisa dibuatkan alias. Di contoh berikut, dipersiapkan tipe Number yang merupakan alias dari tipe data int.
-
-type Number = int
-var num Number = 12
- */
-
+// Anonymous Struct
 type personAnonymous struct {
 	name string
 	age  int
